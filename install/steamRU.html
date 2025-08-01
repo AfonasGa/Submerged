@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submerged - Download</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 50%;
+            bottom: 0;
+            opacity: 0;
+            animation: rise linear forwards;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 828px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 100, 255, 0.3);
+        }
+
+        h1 {
+            color: #4af;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #6bf;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #8cf;
+        }
+
+        .download-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            background-color: #0066ff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #0088ff;
+        }
+
+        .step {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #4af;
+        }
+
+        code {
+            background-color: rgba(0, 50, 100, 0.5);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        code:hover {
+            background-color: rgba(0, 80, 150, 0.5);
+        }
+
+        .steam-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #1a1a2e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .steam-button:hover {
+            background-color: #2a2a3e;
+        }
+
+        .disclaimer {
+            font-size: 0.9em;
+            color: #aaa;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .repo-link {
+            color: #4af;
+            text-decoration: none;
+        }
+
+        .repo-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-container" id="stars-container"></div>
+
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/SubmergedAmongUs/Submerged/refs/heads/main/.github/Images/Icon.png" alt="Submerged Logo" class="logo">
+        <h1>Submerged</h1>
+    </div>
+
+    <div class="content">
+        <h2>Инструкция по установке Submerged</h2>
+        
+        <div class="step">
+            <h3>Шаг 1: Скачайте мод</h3>
+            <p>Нажмите на кнопку ниже, чтобы скачать Submerged:</p>
+            <a href="https://github.com/SubmergedAmongUs/Submerged/releases/download/v2022.6.12/Submerged.zip" target="_blank" class="download-button">Скачать Submerged</a>
+        </div>
+        
+        <div class="step">
+            <h3>Шаг 2: Откройте консоль Steam</h3>
+            <p>Нажмите на кнопку ниже, чтобы открыть консоль Steam:</p>
+            <a href="steam://open/console" class="steam-button">Открыть консоль Steam</a>
+        </div>
+        
+        <div class="step">
+            <h3>Шаг 3: Установка версии Among Us</h3>
+            <p>Введите в консоль Steam данную команду (нажмите чтобы скопировать):</p>
+            <code id="steam-command">download_depot 945360 945361 7098949171778272067</code>
+        </div>
+        
+        <div class="step">
+            <h3>Шаг 4: Установка мода</h3>
+            <ol>
+                <li>Откройте папку с игрой Among Us (обычно <code>C:\Program Files (x86)\Steam\steamapps\content\app_945360</code>)</li>
+                <li>Скопируйте файлы из архива в эту папку, сохраняя структуру папок</li>
+                <li>При необходимости подтвердите замену файлов</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Шаг 5: Запуск игры</h3>
+            <p>Запустите игру как обычно через depot в стиме. Мод должен автоматически загрузиться.</p>
+            <p>Если возникли проблемы, убедитесь, что BepInEx установлен правильно и все файлы мода находятся в нужных папках.</p>
+        </div>
+        
+        <div class="disclaimer">
+            <p>Это неофициальный сайт Submerged. Официальный репозиторий проекта: 
+            <a href="https://github.com/SubmergedAmongUs/Submerged" class="repo-link" target="_blank">SubmergedAmongUs/Submerged</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Создание анимированных звёзд (появляются снизу и летят вверх)
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                setTimeout(() => {
+                    const star = document.createElement('div');
+                    star.classList.add('star');
+                    
+                    // Случайные параметры для звёзд
+                    const left = Math.random() * 100;
+                    const size = Math.random() * 3 + 2;
+                    const duration = Math.random() * 5 + 5;
+                    
+                    star.style.left = `${left}%`;
+                    star.style.width = `${size}px`;
+                    star.style.height = `${size}px`;
+                    star.style.animationDuration = `${duration}s`;
+                    
+                    container.appendChild(star);
+                    
+                    // Удаление звезды после завершения анимации
+                    setTimeout(() => {
+                        star.remove();
+                    }, duration * 1000);
+                    
+                }, i * 300); // Задержка между появлением звёзд
+            }
+            
+            // Бесконечное повторение анимации
+            setInterval(() => {
+                createStars();
+            }, starCount * 300);
+        }
+        
+        // Копирование команды Steam при клике
+        document.getElementById('steam-command').addEventListener('click', function() {
+            const text = this.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = this.innerText;
+                this.innerText = 'Скопировано!';
+                setTimeout(() => {
+                    this.innerText = originalText;
+                }, 2000);
+            });
+        });
+        
+        // Запуск анимации при загрузке страницы
+        window.onload = createStars;
+    </script>
+</body>
+</html>
